@@ -17,5 +17,3 @@ var exec = require("cordova/exec");
 function MyPlugin() {
 
 }
-
-
