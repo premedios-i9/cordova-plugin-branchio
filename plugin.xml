@@ -19,7 +19,7 @@
     <!-- Change myplugin.js to the name of your plugin's main js file -->
     <js-module src="www/branchioplugin.js" name="plugin">
         <!-- Change myPlugin to the name you want your plugin to be referenced from -->
-        <clobbers target="cordova.plugins.branchio" />
+        <clobbers target="BranchOutSystems" />
     </js-module>
 
     <dependency id="branch-cordova-sdk" />
