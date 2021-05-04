@@ -12,8 +12,25 @@ var exec = require("cordova/exec");
 /**
  * Constructor.
  *
- * @returns {MyPlugin}
+ * @returns {BranchIO}
  */
-function MyPlugin() {
+function BranchIO() {}
 
+exports.initialize = function(successCallback, failureCallback, isResuming) {
+    Branch.setDebug(true);
+    Branch.enableTestMode(true);
+
+    // Branch initialization
+    if (isResuming) {
+        Branch.initSession();
+    } else {
+        Branch.initSession().then(function(data) {
+            if (isResuming) {
+                if (data['+clicked_branch_link']) {
+                    // read deep link data on click
+                    alert('Deep Link Data: ' + JSON.stringify(data))
+                }
+            }
+        });
+    }
 }
