@@ -71,10 +71,10 @@ BranchOutSystems.prototype.createContentReference = function(successCallback, fa
 
 BranchOutSystems.prototype.createDeepLink = function(successCallBack, failureCallBack, universalObject, analyticsProperties, controlProperties) {
     
-    universalObject.generateShortUrl(analyticsProperties, ).then(function (res) {
-        alert('Response: ' + JSON.stringify(res.url))
+    universalObject.generateShortUrl(analyticsProperties, controlProperties).then(function (res) {
+        successCallBack(res.url);
     }).catch(function (err) {
-        alert('Error: ' + JSON.stringify(err))
+        failureCallBack("Error creating deep link: " + JSON.stringify(err));
     });
 }
 
@@ -83,8 +83,8 @@ BranchOutSystems.prototype.readDeepLink = function(successCallBack, failureCallB
         if (data['+clicked_branch_link']) {
             successCallBack(data);
         }
-    }).catch(function(data) {
-        failureCallBack(data);
+    }).catch(function(err) {
+        failureCallBack(err);
     });
 }
 
@@ -97,7 +97,7 @@ BranchOutSystems.prototype.trackUser = function(successCallBack, failureCallBack
 }
 
 BranchOutSystems.prototype.untrackUser = function(successCallBack, failureCallBack) {
-    Branch.logOut().tne(function(res) {
+    Branch.logOut().then(function(res) {
         successCallBack("User successfully logged out");
     }).catch(function(e) {
         failureCallBack("Error logging out user: " + e);
@@ -112,6 +112,17 @@ BranchOutSystems.prototype.displayContentSpotlight = function(successCallBack, f
     });
 }
 
-BranchOutSystems.prototype.track
+BranchOutSystems.prototype.shareDeepLink = function(successCallBack, failureCallBack, universalObject, analysticProteries, controlProperties, message) {
+    universalObject.showShareSheet(analyticsProperties, controlProperties, message);
+    successCallBack("Shared successfully");
+}
+
+BranchOutSystems.prototype.trackContent = function(successCallBack, failureCallBack, universalObject) {
+    universalObject.registerView().then(function(res) {
+        successCallBack(res);
+    }).cath(function(err) {
+        failureCallBack(err);
+    });
+}
 
 module.exports = new BranchOutSystems();
