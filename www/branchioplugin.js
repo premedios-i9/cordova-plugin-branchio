@@ -168,4 +168,12 @@ BranchOutSystems.prototype.enableTracking = function (successCallBack, failureCa
     successCallBack("toggled Tracking to" + canTrack);
 };
 
+BranchOutSystems.prototype.getTrackingPermissionStatus = function (successCallBack, failureCallBack) {
+    exec(successCallBack, failureCallBack, "BranchIO", "getTrackingPermissionStatus");
+};
+
+BranchOutSystems.prototype.requestTrackingPermission = function (successCallBack, failureCallBack) {
+    exec(successCallBack, failureCallBack, "BranchIO", "requestTrackingPermission");
+};
+
 module.exports = new BranchOutSystems();

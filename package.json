@@ -1,12 +1,15 @@
 {
-  "name": "BranchIOPlugin",
-  "version": "1.0.0",
-  "description": "Template to create a plugin for Cordova from scratch",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
+    "name": "BranchIOPlugin",
+    "version": "1.0.0",
+    "description": "Template to create a plugin for Cordova from scratch",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "xml2json": "^0.12.0"
+    }
 }

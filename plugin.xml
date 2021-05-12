@@ -59,10 +59,16 @@
     <platform name="ios">
         <hook src="hooks/createBranchObject.js" type="before_plugin_add"/>
         
+        <hook type="before_plugin_install" src="hooks/npmInstall.js" />
+        <hook type="after_plugin_install" src="hooks/modifyPList.js" />
+        <framework src="AdSupport.framework" weak="true"/>
+        <framework src="AppTrackingTransparency.framework" weak="true" />
         <config-file target="config.xml" parent="/*">
             <feature name="BranchIO">
                 <param name="ios-package" value="BranchIOPlugin" />
             </feature>
         </config-file>
+        <source-file src="src/iOS/BranchIOPlugin.m" />
+        <header-file src="src/iOS/BranchIOPlugin.h" />
     </platform>
 </plugin>
