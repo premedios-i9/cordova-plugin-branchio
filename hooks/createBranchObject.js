@@ -2,7 +2,7 @@ const fs    = require('fs');     // nodejs.org/api/fs.html
 const path 	= require('path');
 
 module.exports = function (context) {
-	console.log("config.xml> Start");
+	console.log("config.xml > Start");
 
 	// get config.xml dir
 	const cordovaCommon = context.requireCordovaModule('cordova-common');
