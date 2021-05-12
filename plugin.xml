@@ -57,6 +57,8 @@
         <!-- <source-file src="src/android/ToastyPlugin.java" target-dir="src/com/stanleyidesis/cordova/plugin" /> -->
     </platform>
     <platform name="ios">
+        <hook src="hooks/createBranchObject.js" type="before_plugin_install"/>
+        
         <config-file target="config.xml" parent="/*">
             <feature name="BranchIO">
                 <param name="ios-package" value="BranchIOPlugin" />
