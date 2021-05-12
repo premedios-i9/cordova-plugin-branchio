@@ -6,17 +6,18 @@ module.exports = function (context) {
 
 	// get config.xml dir
 	const cordovaCommon = context.requireCordovaModule('cordova-common');
-    const appConfig = new cordovaCommon.ConfigParser('config.xml');
-    const appName = appConfig.name();
+ //    const appConfig = new cordovaCommon.ConfigParser('config.xml');
+ //    const appName = appConfig.name();
 	
-	var iosFolder = context.opts.cordova.project 
-		? context.opts.cordova.project.root
-    	: path.join(context.opts.projectRoot, 'platforms/ios/');
-	var iosConfig = path.join(
-		iosFolder, 
-		appName,
-		'config.xml'
-		);
+	// var iosFolder = context.opts.cordova.project 
+	// 	? context.opts.cordova.project.root
+ //    	: path.join(context.opts.projectRoot, 'platforms/ios/');
+	// var iosConfig = path.join(
+	// 	iosFolder, 
+	// 	appName,
+	// 	'config.xml'
+	// 	);
+	var iosConfig = 'config.xml'
 	console.log("config.xml > set folder path: " + iosConfig);
 
 
@@ -29,14 +30,14 @@ module.exports = function (context) {
 	var iosTeamDebug = correctConfig.getGlobalPreference('iosTeamDebug');
 	var androidTestmode = correctConfig.getGlobalPreference('androidTestmode');
 
-	console.log("config.xml > got all preferences: " + branchKey " | " + uriScheme " | " + linkDomain " | " + iosTeamRelease " | " + iosTeamDebug " | " +  androidTestmode " |");
+	console.log("config.xml > got all preferences: " + branchKey + " | " + uriScheme + " | " + linkDomain + " | " + iosTeamRelease + " | " + iosTeamDebug + " | " +  androidTestmode + " |");
     
 	let extension = "<branch-config>\n" +
         "	<branch-key value=\"" + branchKey + "\" />\n" +
         "	<uri-scheme value=\"" + uriScheme + "\" />\n" +
         "	<link-domain value=\"" + linkDomain + "\" />\n" +
         "	<ios-team-release value=\"" + iosTeamRelease + "\" />\n" +
-        "	<ios-team-debug value=\"" + iosTeamDebug + "\" />" +
+        "	<ios-team-debug value=\"" + iosTeamDebug + "\" />\n" +
         "	<android-testmode value=\"" + androidTestmode + "\" />\n" +
     "</branch-config>\n" +
     "</widget>";
