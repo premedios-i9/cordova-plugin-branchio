@@ -70,7 +70,7 @@
         
         <framework src="AdSupport.framework" weak="true"/>
         <framework src="AppTrackingTransparency.framework" weak="true" />
-        <framework src="AdServices.framework" weak="false" />
+        <framework src="AdServices.framework" weak="false" embed="true" />
         <config-file target="config.xml" parent="/*">
             <feature name="BranchIO">
                 <param name="ios-package" value="BranchIOPlugin" />
