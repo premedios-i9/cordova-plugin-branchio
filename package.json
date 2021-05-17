@@ -8,8 +8,5 @@
     },
     "keywords": [],
     "author": "",
-    "license": "ISC",
-    "dependencies": {
-        "xml2json": "^0.12.0"
-    }
+    "license": "ISC"
 }

@@ -1,6 +1,6 @@
 var fs = require("fs"); // nodejs.org/api/fs.html
 var plist = require("plist");
-var xmlParser = require("xml2json"); // www.npmjs.com/package/plist
+//var xmlParser = require("xml2json"); // www.npmjs.com/package/plist
 var path = require("path");
 
 module.exports = function (context) {
