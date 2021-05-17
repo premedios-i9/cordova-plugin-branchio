@@ -6,7 +6,7 @@ var path = require("path");
 module.exports = function (context) {
     const cordovaCommon = context.requireCordovaModule("cordova-common");
 
-    var configXMLContents = cordovaCommon.ConfigParser("config.xml");
+    var configXMLContents = new cordovaCommon.ConfigParser("config.xml");
 
     var userTrackingUsageDescription = configXMLContents.getGlobalPreference("UserTrackingUsageDescription");
 
