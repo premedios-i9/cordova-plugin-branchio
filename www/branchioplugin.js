@@ -120,7 +120,7 @@ BranchOutSystems.prototype.trackUser = function (successCallBack, failureCallBac
 };
 
 BranchOutSystems.prototype.untrackUser = function (successCallBack, failureCallBack) {
-    Branch.logOut()
+    Branch.logout()
         .then(function (res) {
             successCallBack("User successfully logged out");
         })
