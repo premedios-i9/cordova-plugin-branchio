@@ -19,7 +19,7 @@ var BranchOutSystems = function BranchOutSystems() {
 
 BranchOutSystems.prototype.initialize = function (successCallback, failureCallback, options) {
     Branch.enableLogging = true;
-    Branch.enableTestMode(!isProduction);
+    Branch.enableTestMode(true);
 
     // Branch initialization
     if (!isResuming) {
