@@ -148,7 +148,7 @@ BranchOutSystems.prototype.shareDeepLink = function (
     successCallBack,
     failureCallBack,
     universalObject,
-    analysticProteries,
+    analyticsProperties,
     controlProperties,
     message
 ) {
