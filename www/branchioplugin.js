@@ -17,9 +17,13 @@ var BranchOutSystems = function BranchOutSystems() {
     this.capturedDeepLinks = {};
 };
 
-BranchOutSystems.prototype.initialize = function (successCallback, failureCallback, isResuming) {
+BranchOutSystems.prototype.isProduction = function (successCallBack, failureCallBack) {
+    exec(successCallBack, failureCallBack, "BranchIO", "isProduction");
+};
+
+BranchOutSystems.prototype.initialize = function (successCallback, failureCallback, isResuming, isProduction) {
     Branch.enableLogging = true;
-    Branch.enableTestMode(true);
+    Branch.enableTestMode(!isProduction);
 
     // Branch initialization
     if (!isResuming) {
