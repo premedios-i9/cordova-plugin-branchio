@@ -18,6 +18,8 @@ public class BranchIOPlugin extends CordovaPlugin {
         if (action.equals("isProduction")) {
             getTestModeSetting();
         }
+
+        return super.execute(action, args, callbackContext);
     }
 
     private void getTestModeSetting() {
