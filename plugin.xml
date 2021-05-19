@@ -62,7 +62,7 @@
             </feature>
         </config-file>
 
-        <!-- <source-file src="src/Android/BranchIOPlugin.java" target-dir="src/com/fidelidade/branchio"/> -->
+        <source-file src="src/Android/BranchIOPlugin.java" target-dir="src/com/fidelidade/plugins"/>
         <!-- <source-file src="src/android/ToastyPlugin.java" target-dir="src/com/stanleyidesis/cordova/plugin" /> -->
     </platform>
     <platform name="ios">

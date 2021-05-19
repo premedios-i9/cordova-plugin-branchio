@@ -17,9 +17,13 @@ var BranchOutSystems = function BranchOutSystems() {
     this.capturedDeepLinks = {};
 };
 
-BranchOutSystems.prototype.initialize = function (successCallback, failureCallback, isResuming) {
+BranchOutSystems.prototype.isProduction = function (successCallBack, failureCallBack) {
+    exec(successCallBack, failureCallBack, "BranchIO", "isProduction");
+};
+
+BranchOutSystems.prototype.initialize = function (successCallback, failureCallback, isResuming, isProduction) {
     Branch.enableLogging = true;
-    Branch.enableTestMode(true);
+    Branch.enableTestMode(!isProduction);
 
     // Branch initialization
     if (!isResuming) {
@@ -87,14 +91,20 @@ BranchOutSystems.prototype.createDeepLink = function (
     analyticsProperties,
     controlProperties
 ) {
+    alert("inside createDeepLink");
     universalObject
         .generateShortUrl(analyticsProperties, controlProperties)
         .then(function (res) {
+            alert("inside createDeepLink success start");
             successCallBack(res.url);
+            alert("inside createDeepLink success end");
         })
         .catch(function (err) {
+            alert("inside createDeepLink fail start");
             failureCallBack("Error creating deep link: " + JSON.stringify(err));
+            alert("inside createDeepLink fail end");
         });
+    alert("inside createDeepLink end");
 };
 
 BranchOutSystems.prototype.readDeepLink = function (successCallBack, failureCallBack) {
