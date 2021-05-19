@@ -91,20 +91,14 @@ BranchOutSystems.prototype.createDeepLink = function (
     analyticsProperties,
     controlProperties
 ) {
-    alert("inside createDeepLink");
     universalObject
         .generateShortUrl(analyticsProperties, controlProperties)
         .then(function (res) {
-            alert("inside createDeepLink success start");
             successCallBack(res.url);
-            alert("inside createDeepLink success end");
         })
         .catch(function (err) {
-            alert("inside createDeepLink fail start");
             failureCallBack("Error creating deep link: " + JSON.stringify(err));
-            alert("inside createDeepLink fail end");
         });
-    alert("inside createDeepLink end");
 };
 
 BranchOutSystems.prototype.readDeepLink = function (successCallBack, failureCallBack) {
