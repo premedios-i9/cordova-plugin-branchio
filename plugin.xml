@@ -19,14 +19,17 @@
     </engines>
     
 <!--    <hook src="hooks/createBranchObject.js" type="before_plugin_add"/>-->
-    <hook src="hooks/createBranchObject.js" type="before_plugin_install"/>
-    <hook src="hooks/npmInstall.js" type="before_plugin_install" />
-    <hook src="hooks/installDependency.js" type="after_plugin_install" />
     
 
 <!--    <dependency id="branch-cordova-sdk" />-->
 
     <platform name="android">
+        <!-- after ios is available use also on ios  start -->
+        <hook src="hooks/createBranchObject.js" type="before_plugin_install"/>
+        <hook src="hooks/npmInstall.js" type="before_plugin_install" />
+        <hook src="hooks/installDependency.js" type="after_plugin_install" />
+        <!-- after ios is available use also on ios  end -->
+        
         <!-- Change myplugin.js to the name of your plugin's main js file -->
         <js-module src="www/branchioplugin.js" name="plugin">
         <!-- Change myPlugin to the name you want your plugin to be referenced from -->
